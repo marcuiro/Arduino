@@ -1,0 +1,41 @@
+long millisTarefa1 = millis();
+long millisTarefa2 = millis();
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(8, OUTPUT);
+  pinMode(13, OUTPUT);
+}
+
+void loop()
+{
+  LED_13();
+  LED_8();
+}
+  void LED_13(){
+  if ((millis() - millisTarefa1) < 100){
+  digitalWrite(13, HIGH);
+}
+else {
+  digitalWrite(13, LOW);
+}
+ if((millis() - millisTarefa1) > 200){
+   millisTarefa1 = millis();
+   
+ }
+ 
+}
+
+void LED_8(){
+   if ((millis() - millisTarefa2) < 300){
+  digitalWrite(8, HIGH);
+}
+else {
+  digitalWrite(8, LOW);
+}
+ if((millis() - millisTarefa2) > 400){
+   millisTarefa2 = millis();
+ }
+  
+}
